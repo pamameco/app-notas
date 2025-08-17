@@ -64,6 +64,50 @@ La aplicación funciona de manera sencilla:
 2. **Notas:** Página principal donde se pueden ver todas las notas del usuario, filtrarlas por título o contenido, agregar nuevas notas, editar o eliminar las existentes.
 3. **Detalle de nota:** Permite ver el contenido completo de una nota específica.
 4. **Gestión del estado:** El estado de usuario y notas se maneja con React Context, lo que mantiene la sesión activa y permite actualizar las notas en tiempo real.
-5. **Decisiones de diseño:** Para que la aplicación tenga una apariencia atractiva y sin tanto codigo, se uso el CDN de Tailwind, así aprovechamos sus estilos directamente desde la web.
+5. **Decisiones de diseño:** Quise que la aplicación sea fácil de usar y atractiva, condiseño no tan invasivo. Para eso, usé el **CDN de Tailwind**, así pude aplicar estilos modernos sin escribir mucho código.\
+Agregué un **navbar** que muestra quién está conectado y un **botón de desconectar** para salir rápido. Todo está pensado para que cualquier persona pueda entender al instante cómo usar la App Notas.\
+La idea fue mantener todo **intuitivo y claro**: formularios simples, botones visibles y un filtro de notas que funcione directamente desde la pantalla.
 
+---
 
+### Pruebas básicas
+
+Para asegurarse de que la aplicación funciona correctamente, se pueden realizar estas pruebas:
+
+1. **Registro de usuario:**  
+   - Ir a la página de registro.  
+   - Crear un usuario con correo y contraseña.  
+   - Verificar que después de registrarse se redirige a la lista de notas.
+
+2. **Login:**  
+   - Ir a la página de inicio de sesión.  
+   - Ingresar un usuario existente.  
+   - Confirmar que permite acceder a las notas.  
+   - Intentar ingresar con datos incorrectos y verificar que aparece un mensaje de error.
+
+3. **Agregar nota:**  
+   - En la página de notas, escribir un título y contenido.  
+   - Hacer clic en “Agregar Nota”.  
+   - Comprobar que la nota aparece en la lista.
+
+4. **Editar nota:**  
+   - Seleccionar una nota y hacer clic en “Editar”.  
+   - Cambiar título o contenido y guardar.  
+   - Verificar que los cambios se reflejan correctamente.
+
+5. **Eliminar nota:**  
+   - Seleccionar una nota y hacer clic en “Eliminar”.  
+   - Confirmar que la nota desaparece de la lista.
+
+6. **Filtrado de notas:**  
+   - Escribir palabras clave en la barra de búsqueda.  
+   - Verificar que solo aparecen las notas que coinciden con la búsqueda.
+
+7. **Ver detalle de nota:**  
+   - Hacer clic en “Ver Nota”.  
+   - Confirmar que se muestra el título y contenido completo.  
+   - Regresar a la lista de notas.
+
+8. **Cerrar sesión:**  
+   - Hacer clic en “Desconectar”.  
+   - Comprobar que redirige al login y no permite acceder a notas sin iniciar sesión.
