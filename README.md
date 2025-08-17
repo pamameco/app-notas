@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Aplicación de Notas con Autenticación y Filtrado
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instalación de la App Notas
 
-## Available Scripts
+### 1. Clonar o descargar el proyecto
 
-In the project directory, you can run:
+Primero tener el proyecto descargado en el computador. Por ejemplo:
 
-### `npm start`
+```
+C:\app-notas
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. Instalar dependencias
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Abrir una terminal (cmd) en la carpeta donde esta el proyecto y ejecutar:
 
-### `npm test`
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esto instalará las dependencias para que la aplicación funcione.
 
-### `npm run build`
+### 3. Iniciar la base de datos con JSON Server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+La aplicación usa **JSON Server** para guardar usuarios y notas.\
+En otra terminal (diferente a la de `npm install`), ejecuta:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+json-server --watch db.json --port 3001
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Esto levantará la base de datos en [http://localhost:3001](http://localhost:3001).
 
-### `npm run eject`
+### 4. Iniciar la aplicación
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Luego, en la terminal del proyecto (si se descargo en `C:/app-notas` por ejemplo), ejecutar:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Esto abrirá la aplicación en el navegador en [http://localhost:3000](http://localhost:3000).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## Uso de la aplicación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Ingresa a la app desde [http://localhost:3000](http://localhost:3000) o donde indique el terminal.
+- Puedes iniciar sesión con un usuario de prueba que ya existe en la base de datos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Correo:** `pablo@medel.com`\
+**Clave:** `123465`
 
-### Code Splitting
+Desde allí podrás agregar, editar, eliminar y filtrar tus notas.\
+Si prefieres crear una cuenta presionar el boton `Registrar`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Flujo de la aplicación y componentes principales
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+La aplicación funciona de manera sencilla:
 
-### Making a Progressive Web App
+1. **Login/Register:** Permite iniciar sesión o registrarse. Los datos se guardan en **JSON Server**.
+2. **Notas:** Página principal donde se pueden ver todas las notas del usuario, filtrarlas por título o contenido, agregar nuevas notas, editar o eliminar las existentes.
+3. **Detalle de nota:** Permite ver el contenido completo de una nota específica.
+4. **Gestión del estado:** El estado de usuario y notas se maneja con React Context, lo que mantiene la sesión activa y permite actualizar las notas en tiempo real.
+5. **Decisiones de diseño:** Para que la aplicación tenga una apariencia atractiva y sin tanto codigo, se uso el CDN de Tailwind, así aprovechamos sus estilos directamente desde la web.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
