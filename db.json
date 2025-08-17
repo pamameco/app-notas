@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "pablo@medel.com",
+      "password": "123456"
+    },
+    {
+      "id": "9fee",
+      "email": "q@q.cl",
+      "password": "123456"
+    }
+  ],
+  "notes": [
+    {
+      "id": "e63d",
+      "titulo": "Ingenieria en Informatica",
+      "contenido": "nota de ejemplo con detalles de Ingenieria en Informatica",
+      "userId": "1"
+    }
+  ]
+}
