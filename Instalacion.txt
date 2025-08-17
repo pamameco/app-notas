@@ -1,0 +1,40 @@
+Aplicación de Notas con Autenticación y Filtrado
+
+Instalación de App Notas
+
+Clonar o descargar el proyecto
+Primero tener el proyecto descargado en el computador. Por ejemplo:
+
+C:\app-notas.
+
+
+2. Instalar dependencias
+Abrir una terminal (cmd) en la carpeta donde esta el proyecto y ejecutar:
+
+npm install
+
+Esto instalará todo lo necesario para que la aplicación funcione.
+
+
+Iniciar la base de datos con JSON Server
+La aplicación usa JSON Server para guardar usuarios y notas. En otra terminal (diferente a la de npm install), ejecuta:
+
+json-server --watch db.json --port 3001
+
+Esto levantará la base de datos en http://localhost:3001.
+
+
+Iniciar la aplicación
+Luego, en la terminal del proyecto (si se descargo en c:/app-notas por ejemplo), ejecutar:
+
+npm start
+
+Esto abrirá la aplicación en el navegador, en http://localhost:3000.
+
+
+Ingresar a la aplicacion desde la direccion http://localhost:3000 o donde indique el terminal
+** En la base de datos ya existe el usuario para hacer pruebas:
+
+correo pablo@medel.com
+
+clave: 123465
